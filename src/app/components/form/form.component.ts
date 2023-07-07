@@ -20,7 +20,7 @@ export class FormComponent implements OnInit {
         email: ['', [Validators.required, Validators.email]],
         password: ['', [Validators.required, Validators.pattern('^(?=.*[A-ZА-Я])(?!.*\\s).{8,}$')]],
         confirmPassword: ['', [Validators.required, confirmPasswordValidator()]],
-        privacyPolicy: [false, [Validators.required]]
+        privacyPolicy: [false, [Validators.required, Validators.requiredTrue]]
       });
   }
 
@@ -29,8 +29,7 @@ export class FormComponent implements OnInit {
   }
 
   public getFormData(): void {
-    console.log(this.form.get('privacyPolicy'));
-    // console.log(this.form.value);
-    // this.form.reset();
+    console.table(this.form.value);
+    this.form.reset();
   }
 }

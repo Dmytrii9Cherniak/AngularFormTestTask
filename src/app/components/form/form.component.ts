@@ -19,13 +19,9 @@ export class FormComponent implements OnInit {
         lastName: ['', [Validators.required]],
         email: ['', [Validators.required, Validators.email]],
         password: ['', [Validators.required, Validators.pattern('^(?=.*[A-ZА-Я])(?!.*\\s).{8,}$')]],
-        confirmPassword: ['', [Validators.required, confirmPasswordValidator()]],
+        confirmPassword: ['', [Validators.required]],
         privacyPolicy: [false, [Validators.required, Validators.requiredTrue]]
-      });
-  }
-
-  public getControlValue(control: string) {
-    return this.form.get(control);
+      }, { validators: [confirmPasswordValidator()] });
   }
 
   public getFormData(): void {

@@ -23,20 +23,19 @@
               <div class="form-group">
                 <label for="email">Email</label>
                 <input id="email" class="form-control" type="email" formControlName="email">
-                <div *ngIf="getControlValue('email')?.hasError('email') && (getControlValue('email')?.dirty || getControlValue('email')?.touched)"
+                <div *ngIf="form.get('email')?.hasError('email') && (form.get('email')?.dirty || form.get('email')?.touched)"
                      class="text-danger">
                   Email is not valid
                 </div>
-
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label for="password">Password</label>
                 <input id="password" class="form-control" type="password" formControlName="password">
-                <div *ngIf="getControlValue('password')?.hasError('pattern') && getControlValue('password')?.dirty"
+                <div *ngIf="form.get('password')?.hasError('pattern') && form.get('password')?.dirty"
                      class="text-danger">
-                  The password must consist of at least 8 characters, one capital letter and no spaces
+                  The password must consist of at least 8 characters, one capital letter, and no spaces
                 </div>
               </div>
             </div>
@@ -44,9 +43,7 @@
               <div class="form-group">
                 <label for="confirmPassword">Confirm Password</label>
                 <input id="confirmPassword" class="form-control" type="password" formControlName="confirmPassword">
-                <div *ngIf="getControlValue('confirmPassword')?.hasError('confirmPasswordMismatch')
-  && (getControlValue('confirmPassword')?.dirty || getControlValue('confirmPassword')?.touched)"
-                     class="text-danger">
+                <div *ngIf="form.hasError('confirmPasswordMismatch') && form.get('confirmPassword')?.dirty" class="text-danger">
                   Passwords do not match.
                 </div>
               </div>

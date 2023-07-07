@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { MefDevPageLayoutsModule } from '@natec/mef-dev-ui-kit';
+import {MefDevCardModule, MefDevPageLayoutsModule} from '@natec/mef-dev-ui-kit';
 
 const components = [
-  MefDevPageLayoutsModule
+  MefDevCardModule
 ]
 
 @NgModule({

@@ -5,6 +5,7 @@ import { FormRoutingModule } from './form-routing.module';
 import { FormComponent } from './form.component';
 import { MefDevCardModule }  from "@natec/mef-dev-ui-kit";
 import { ReactiveFormsModule } from '@angular/forms';
+import {UiModule} from "../../ui.module";
 
 
 @NgModule({
@@ -13,7 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     ReactiveFormsModule,
     FormRoutingModule,
-    MefDevCardModule,
+    UiModule,
   ]
 })
 export class FormModule { }

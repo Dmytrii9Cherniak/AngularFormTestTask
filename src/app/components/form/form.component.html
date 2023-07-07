@@ -23,10 +23,11 @@
               <div class="form-group">
                 <label for="email">Email</label>
                 <input id="email" class="form-control" type="email" formControlName="email">
-                <div *ngIf="getControlValue('email')?.hasError('email') && getControlValue('email')?.dirty && getControlValue('email')?.touched"
+                <div *ngIf="getControlValue('email')?.hasError('email') && (getControlValue('email')?.dirty || getControlValue('email')?.touched)"
                      class="text-danger">
                   Email is not valid
                 </div>
+
               </div>
             </div>
             <div class="col-md-6">

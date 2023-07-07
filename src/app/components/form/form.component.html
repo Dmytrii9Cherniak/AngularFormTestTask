@@ -23,7 +23,7 @@
               <div class="form-group">
                 <label for="email">Email</label>
                 <input id="email" class="form-control" type="email" formControlName="email">
-                <div *ngIf="getControlValue('email')?.hasError('email') && getControlValue('email')?.dirty"
+                <div *ngIf="getControlValue('email')?.hasError('email') && getControlValue('email')?.dirty && getControlValue('email')?.touched"
                      class="text-danger">
                   Email is not valid
                 </div>
@@ -44,7 +44,7 @@
                 <label for="confirmPassword">Confirm Password</label>
                 <input id="confirmPassword" class="form-control" type="password" formControlName="confirmPassword">
                 <div *ngIf="getControlValue('confirmPassword')?.hasError('confirmPasswordMismatch')
-                && getControlValue('confirmPassword')?.dirty && getControlValue('confirmPassword')?.touched"
+  && (getControlValue('confirmPassword')?.dirty || getControlValue('confirmPassword')?.touched)"
                      class="text-danger">
                   Passwords do not match.
                 </div>

@@ -15,7 +15,6 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    // UiModule
   ],
   providers: [],
   bootstrap: [AppComponent]

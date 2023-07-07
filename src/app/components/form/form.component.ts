@@ -19,7 +19,7 @@ export class FormComponent implements OnInit {
         firstName: ['', [ Validators.required ]],
         lastName: ['', [ Validators.required ]],
         email: ['', [ Validators.required, Validators.email ]],
-        password: ['', [ Validators.required, Validators.pattern('/^(?=.*[A-ZА-Я])(?!.*\\s).{8,}$/') ]],
+        password: ['', [ Validators.required, Validators.pattern('^(?=.*[A-ZА-Я])(?!.*\\s).{8,}$') ]],
         confirmPassword: ['', [ Validators.required ]],
         privacyPolicy: [false, [ Validators.required ]]
       })
@@ -27,6 +27,7 @@ export class FormComponent implements OnInit {
 
     public getFormData(): void {
       console.log(this.form.value);
+      this.form.reset();
     }
 
 }

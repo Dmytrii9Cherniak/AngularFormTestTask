@@ -1,1 +1,62 @@
-<h4> works </h4>
+<medev-card-simple>
+
+  <form class="card-simple" [formGroup]="form">
+
+    <div class="row m-2 body-1 ng-star-inserted">
+      <h2 class="col-12">Signup</h2>
+    </div>
+    <div class="row m-2">
+      <div class="col-12">
+        <ng-container>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="firstName">Firstname</label>
+                <input id="firstName" class="form-control" type="text" formControlName="firstName">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="lastName">Lastname</label>
+                <input id="lastName" class="form-control" type="text" formControlName="lastName">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" class="form-control" type="email" formControlName="email">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input id="password" class="form-control" type="password" formControlName="password">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input id="confirmPassword" class="form-control" type="password" formControlName="confirmPassword">
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <div class="form-check">
+                  <input id="privacyPolicy" class="form-check-input" type="checkbox" formControlName="privacyPolicy">
+                  <label class="form-check-label" for="privacyPolicy">Privacy Policy</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <button class="btn btn-success" (click)="getFormData()" [disabled]="form.invalid">Confirm</button>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+
+      </div>
+    </div>
+  </form>
+
+</medev-card-simple>
